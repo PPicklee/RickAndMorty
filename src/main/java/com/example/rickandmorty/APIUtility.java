@@ -17,14 +17,18 @@ public class APIUtility {
      * This method will call the Rick and Morty API
      * and search for a specific character with a specific term
      */
-    public static void  getCharacterFromRickAndMorty(String searchTerm) throws IOException, InterruptedException {
-        String uri = "https://rickandmortyapi.com/api/character/?name=rick";
+    public static APIResponse  getCharacterFromRickAndMorty(String searchTerm) throws IOException, InterruptedException {
+        searchTerm = searchTerm.replaceAll(" ","%20");
+        String uri = "https://rickandmortyapi.com/api/character/?name="+searchTerm;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest httpRequest= HttpRequest.newBuilder().uri(URI.create(uri)).build();
-        HttpResponse<Path> response = client.send(httpRequest, HttpResponse
-                .BodyHandlers
-                .ofFile(Paths.get("jsonData.json")));
+
+        HttpResponse<String> response = client.send(httpRequest,
+                HttpResponse.BodyHandlers.ofString());
+
+        Gson gson = new Gson();
+        return gson.fromJson(response.body(),APIResponse.class);
     }
 
     /**
@@ -53,19 +57,5 @@ public class APIUtility {
         }
         return apiResponse;
     }
-
-
-//    private String/*Character[]*/ search;
-//
-//    private String totalResults;
-//
-//    private String response;
-//
-//    private String error;
-//
-//    //public static APIResponse getSingleCharacter(String name) throws IOException, InterruptedException {
-//    search = search.replaceAll(" ", "%20");//replace blank spaces
-//
-//    String uri = "https://rickandmortyapi.com/api"+search;
 
 }

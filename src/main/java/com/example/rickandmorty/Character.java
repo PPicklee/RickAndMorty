@@ -83,4 +83,8 @@ public class Character {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String toString (){
+        return String.format("%s-%s",name,gender);
+    }
 }

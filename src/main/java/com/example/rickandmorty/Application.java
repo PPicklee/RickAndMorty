@@ -11,14 +11,14 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Rick and Morty API");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        APIUtility.getCharacterFromJsonFile();
+        APIResponse apiResponse = APIUtility.getCharacterFromRickAndMorty("rick");
         launch();
     }
 }
