@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class APIResponse {
-    @SerializedName("Results")
+    @SerializedName("results")
     private Character[] results;
 
     public APIResponse(Character[] results) {

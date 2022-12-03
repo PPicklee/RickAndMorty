@@ -3,19 +3,19 @@ package com.example.rickandmorty;
 import com.google.gson.annotations.SerializedName;
 
 public class Character {
-    @SerializedName("Id")
+    @SerializedName("id")
     private String id;
-    @SerializedName("Name")
+    @SerializedName("name")
     private String name;
-    @SerializedName("Status")
+    @SerializedName("status")
     private String status;
-    @SerializedName("Species")
+    @SerializedName("species")
     private String species;
-    @SerializedName("Type")
+    @SerializedName("type")
     private String type;
-    @SerializedName("Gender")
+    @SerializedName("gender")
     private String gender;
-    @SerializedName("Image")
+    @SerializedName("image")
     private String image;
 
     public Character(String id, String name, String status, String species, String type, String gender, String image) {
