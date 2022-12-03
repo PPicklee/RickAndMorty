@@ -2,4 +2,23 @@
     -fx-background-image: url("https://wallpaper.dog/large/17206939.jpg");
     -fx-background-size: cover;
     -fx-text-fill: #FAF9F6;
+
+}
+
+.button {
+    background-color: #AFE1AF;
+    border: none;
+    color: white;
+    padding: 18px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.label{
+    font-size: 25px;
+}
+.list-cell { /* <=== changed to even */
+    -fx-background-color: #90EE90;
 }

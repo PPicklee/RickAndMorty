@@ -37,10 +37,18 @@ public class StartController implements Initializable {
 
         @FXML
         private VBox vbox;
+
+    /**
+     * When called upon changes to the details fxml file with the character id to get more info
+     * @param event
+     * @throws IOException
+     * @throws InterruptedException
+     */
         @FXML
          void getDetails(ActionEvent event) throws IOException, InterruptedException {
             Character characterSelected = listView.getSelectionModel().getSelectedItem();
-            //SceneChanger.changeScenes(event,"info-view.fxml",movieSelected.getImdbID());
+            CharacterDetails characterDetails = APIUtility.getCharacterDetailsFromRickAndMorty(characterSelected.getId());
+            SceneChanger.changeScenes(event,"details.fxml",characterDetails);
          }
 
         /**

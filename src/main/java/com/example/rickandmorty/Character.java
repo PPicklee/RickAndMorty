@@ -3,29 +3,19 @@ package com.example.rickandmorty;
 import com.google.gson.annotations.SerializedName;
 
 public class Character {
-    @SerializedName("id")
-    private String id;
+    //does not need serialized names because they are already lowercase in API docs
+
     @SerializedName("name")
     private String name;
-    @SerializedName("status")
-    private String status;
-    @SerializedName("species")
-    private String species;
-    @SerializedName("type")
-    private String type;
-    @SerializedName("gender")
-    private String gender;
     @SerializedName("image")
     private String image;
+    @SerializedName("id")
+    private String id;
 
-    public Character(String id, String name, String status, String species, String type, String gender, String image) {
-        setId(id);
+    public Character(String name, String image, String id) {
         setName(name);
-        setStatus(status);
-        setSpecies(species);
-        setType(type);
-        setGender(gender);
         setImage(image);
+        setId(id);
     }
 
     public String getId() {
@@ -36,44 +26,12 @@ public class Character {
         this.id = id;
     }
 
-    public String getName() {
+    public  String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     public String getImage() {
@@ -85,6 +43,6 @@ public class Character {
     }
 
     public String toString (){
-        return String.format("%s-%s",name,gender);
+        return String.format("%s",name);
     }
 }

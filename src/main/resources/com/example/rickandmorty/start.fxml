@@ -43,6 +43,6 @@
             <ListView fx:id="listView" prefHeight="304.0" prefWidth="359.0" />
          </children>
       </HBox>
-      <Button fx:id="moreInfoButton" mnemonicParsing="false" text="More Info" />
+      <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#getDetails" text="More Info" />
    </children>
 </VBox>

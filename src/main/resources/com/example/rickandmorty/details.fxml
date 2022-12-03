@@ -7,11 +7,12 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane prefHeight="700.0" prefWidth="400.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rickandmorty.DetailsController">
    <children>
-      <GridPane layoutY="14.0" prefHeight="700.0" prefWidth="400.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+      <GridPane layoutY="14.0" prefHeight="700.0" prefWidth="400.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -24,16 +25,48 @@
             <RowConstraints maxHeight="278.79999999999995" minHeight="10.0" prefHeight="263.4000305175781" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Name" />
-            <Label text="Gender" GridPane.rowIndex="1" />
-            <Label text="Status" GridPane.rowIndex="2" />
-            <Label text="Species" GridPane.rowIndex="3" />
-            <Label GridPane.columnIndex="1" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" />
-            <Button alignment="CENTER" mnemonicParsing="false" text="Back" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label stylesheets="@styles.css" text="Name:" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label text="Gender:" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label text="Status:" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label text="Species:" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="characterImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" />
+            <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#returnToStart" text="Back" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="genderLabel" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="statusLabel" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="speciesLabel" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameLabel" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
    </children>
